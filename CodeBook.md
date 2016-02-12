@@ -6,10 +6,11 @@ This file described how to replicate the results presented in this repository. T
 
 Instructions
 ---
-1. Manually download data set from the internet (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-2. Unzip data set to the working directory
-3. Run run_analysis.R script
-4. Enjoy the result
+1. Make sure that data.table package is installed for R
+2. Manually download data set from the internet (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+3. Unzip data set to the working directory
+4. Run run_analysis.R script
+5. Enjoy the result
 
 Input
 ---
@@ -29,10 +30,12 @@ Output
 Transformations
 ---
 For additional details please check the corresponding code part in run_analysis.R
+
 1. Loading all the data files needed
 2. Merging train and test data
 3. labeling y
 4. Filtering out features that aren't needed and naming the columns
 5. Binding x and y together
-6. save data
-7. create averages
+6. save data: tidy_data.txt
+7. create averages and save data: tidy_data_means.txt
+

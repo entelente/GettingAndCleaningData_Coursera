@@ -34,10 +34,11 @@ data <- cbind(x_data, y_data, subject_data)
 colnames(data)[which(names(data) == "y_data")] <- "ACTIVITY"
 colnames(data)[which(names(data) == "V1")] <- "SUBJECT"
 
-# 6. save data
+# 6. save data: tidy_data.txt
 write.table(data, file="tidy_data.txt", row.names = FALSE)
 
-# 7. create averages
+# 7. create averages and save data: tidy_data_means.txt
+library(data.table)
 dataTable <- data.table(data)
 output <- dataTable[, lapply(.SD, mean), by=c("SUBJECT", "ACTIVITY")]
 write.table(output, file="tidy_data_means.txt", row.names = FALSE)
