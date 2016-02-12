@@ -24,7 +24,7 @@ Input data is coming from the accelerometer of Samsung Galaxy S devices during v
 
 Output
 ---
-* tidy_data.txt : aggregated and cleaned data
+* tidy_data.txt : aggregated and cleaned data.
   Columns:
   * SUBJECT : Subject id
   * ACTIVITY : activity during the measurement like SITTING or STANDING
