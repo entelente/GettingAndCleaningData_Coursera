@@ -4,7 +4,7 @@
 # Important: This script assumes that data is downloaded and in the working directory.
 
 # 1. Loading all the data files needed
-features <- features <- gsub('(-|\\(\\)|,)', '', toupper(t(read.table('UCI HAR Dataset/features.txt')[2])))   # + Removing index column and cleaning sysmbols from feature names
+features <- features <- gsub(',', '', t(read.table('UCI HAR Dataset/features.txt')[2]))   # + Removing index column and cleaning sysmbols from feature names
 y_train <- read.table('UCI HAR Dataset/train/y_train.txt')
 y_test <- read.table('UCI HAR Dataset/test/y_test.txt')
 x_train <- read.table('UCI HAR Dataset/train/X_train.txt')
@@ -25,7 +25,7 @@ y_data <- y_data[order(y_data$rowid), ]
 y_data <- y_data[, "V2"]
 
 # 4. Filtering out features that aren't needed and naming the columns
-filtered_features <- grep("MEAN|STD", features)
+filtered_features <- grep("-mean|-std", features)
 x_data <- x_data[, filtered_features]
 names(x_data) <- features[filtered_features]
 
